@@ -11,9 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.text())
                 .then(data => {
                     contentDisplay.innerHTML = data;
+                    hideSections();
                     contentDisplay.style.display = 'block';
                 })
                 .catch(error => console.error('Error loading content:', error));
+        });
+    });
+    
+    document.querySelectorAll('button[data-chapter-url]').forEach(button => {
+        button.addEventListener('click', () => {
+            const chapterUrl = button.getAttribute('data-chapter-url');
+            window.location.href = `https://giogaze.github.io/ManGaGi/${chapterUrl}`;
         });
     });
 
