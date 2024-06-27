@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.text())
                 .then(data => {
                     contentDisplay.innerHTML = data;
-                    hideSections();
                     contentDisplay.style.display = 'block';
                 })
                 .catch(error => console.error('Error loading content:', error));
